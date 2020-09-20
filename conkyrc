@@ -43,6 +43,7 @@ conky.config = {
 
 conky.text = [[
 ${color1}Global${color}
+Date${goto 150}${time %d %B %Y - %H:%M:%S}
 Nom${goto 150}${nodename}
 Kernel${goto 150}${kernel}
 Battery${goto 150}${battery_time BAT1}${goto 250}${battery_bar 10,160 BAT1}
@@ -67,7 +68,7 @@ ${color1}Top processes${goto 150}%cpu${goto 250}%mem${color}
 ${top name 1}${goto 150}${top cpu 1}${goto 250}${top mem 1} 
 ${top name 2}${goto 150}${top cpu 2}${goto 250}${top mem 2} 
 ${top name 3}${goto 150}${top cpu 3}${goto 250}${top mem 3}
-${top name 4}${goto 150}${top cpu 4}${goto 250}${top mem 4}
-${top name 5}${goto 150}${top cpu 5}${goto 250}${top mem 5}
-${top name 6}${goto 150}${top cpu 6}${goto 250}${top mem 6}
+# ${top name 4}${goto 150}${top cpu 4}${goto 250}${top mem 4}
+# ${top name 5}${goto 150}${top cpu 5}${goto 250}${top mem 5}
+# ${top name 6}${goto 150}${top cpu 6}${goto 250}${top mem 6}
 ]]
