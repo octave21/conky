@@ -1,0 +1,73 @@
+-- Conky settings #
+
+conky.config = {
+	
+	-- Window settings 
+	own_window = true,
+	own_window_type = 'normal',
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',	
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	own_window_colour = "000000",
+	border_inner_margin = 40,
+	minimum_width = 400,
+	alignment = 'top_right',
+	gap_x = 50,
+	gap_y = 60,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+	
+	-- Buffer settings
+	update_interval = 1,	
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+	double_buffer = true,
+	no_buffers = true,
+	text_buffer_size = 2048,
+	
+	-- Text settings 
+	override_utf8_locale = true,
+	use_xft = true,
+	font = 'Sans:size=10',
+	uppercase = false,
+	default_color = 'FFFFFF',
+	color1 = 'FF6600',
+
+	-- Lua Load  
+	lua_load = '~/Documents/Scripts/conky/clock_rings.lua',
+	lua_draw_hook_pre = 'clock_rings',
+}
+
+conky.text = [[
+${color1}${goto 70}${voffset 90}CPU : ${color}${cpu cpu0}%${voffset -124}
+
+${color1}${goto 70}${voffset 270}Down : ${color}${downspeed wlp3s0}/s
+${color1}${goto 70}Up :   ${color}${upspeed wlp3s0}/s${voffset -321}
+
+${color1}${goto 250}${voffset 90}Mem :  ${color}${memperc}%
+${color1}${goto 250}Swap : ${color}${swapperc}%${voffset -141}
+
+${color1}${goto 250}${voffset 270}/home : ${color}${fs_used_perc /home}%
+${color1}${goto 250}/ :     ${color}${fs_used_perc /}%
+${color1}${goto 250}I/O :   ${color}${diskio}/s${voffset -338}
+
+${color1}${goto 10}${voffset 180}Load : ${color}${loadavg 1}%${voffset -214}
+
+${color }${goto 160}${voffset 150}${time %H:%M:%S}
+${color }${goto 160}${time %d %B %Y}
+${color }${goto 160}${battery_bar 10,160 BAT1}${voffset -218}
+
+
+${voffset 360}
+${color1}Global${color}
+Nom${goto 150}${nodename}
+Kernel${goto 150}${kernel}
+Uptime${goto 150}${uptime_short}
+${color1}Top processes${goto 150}%cpu${goto 250}%mem${color} 
+${top name 1}${goto 150}${top cpu 1}${goto 250}${top mem 1} 
+${top name 2}${goto 150}${top cpu 2}${goto 250}${top mem 2} 
+${top name 3}${goto 150}${top cpu 3}${goto 250}${top mem 3}
+]]

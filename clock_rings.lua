@@ -1,6 +1,6 @@
 -- Affichage des différents cercles, calcul des positionnements des textes
 
-ring_r = 65 -- Rayon du cercle de base
+ring_r = 60 -- Rayon du cercle de base
 border_inner_margin = 40
 offset = border_inner_margin -- Offset pour les bordures x et y
 offset_load = 10 -- Majoration du rayon du cercle loadavg
