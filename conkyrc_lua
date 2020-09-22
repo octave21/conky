@@ -10,7 +10,7 @@ conky.config = {
 	own_window_argb_visual = true,
 	own_window_argb_value = 0,
 	own_window_colour = "000000",
-	border_inner_margin = 20,
+	border_inner_margin = 40,
 	minimum_width = 400,
 	alignment = 'top_right',
 	gap_x = 50,
@@ -37,38 +37,37 @@ conky.config = {
 	color1 = 'FF6600',
 
 	-- Lua Load  
-	-- lua_load = '~/conky/clock_rings.lua',
-	-- lua_draw_hook_pre = 'clock_rings',
+	lua_load = '~/Documents/Scripts/conky/clock_rings.lua',
+	lua_draw_hook_pre = 'clock_rings',
 }
 
 conky.text = [[
+${color1}${lua conky_goto_cpu}${lua conky_voffset_cpu_a}CPU : ${color}${cpu cpu0}%${lua conky_voffset_cpu_b}
+
+${color1}${lua conky_goto_net}${lua conky_voffset_net_a}Down : ${color}${downspeed wlp3s0}/s
+${color1}${lua conky_goto_net}Up :   ${color}${upspeed wlp3s0}/s${lua conky_voffset_net_b}
+
+${color1}${lua conky_goto_mem}${lua conky_voffset_mem_a}Mem :  ${color}${memperc}%
+${color1}${lua conky_goto_mem}Swap : ${color}${swapperc}%${lua conky_voffset_mem_b}
+
+${color1}${lua conky_goto_disk}${lua conky_voffset_disk_a}/home : ${color}${fs_used_perc /home}%
+${color1}${lua conky_goto_disk}/ :     ${color}${fs_used_perc /}%
+${color1}${lua conky_goto_disk}I/O :   ${color}${diskio}/s${lua conky_voffset_disk_b}
+
+${color1}${lua conky_goto_load}${lua conky_voffset_load_a}Load : ${color}${loadavg 1}%${lua conky_voffset_load_b}
+
+${color }${lua conky_goto_date}${lua conky_voffset_date_a}${time %H:%M:%S}
+${color }${lua conky_goto_date}${time %d %B %Y}
+${color }${lua conky_goto_date}${battery_bar 10,160 BAT1}${lua conky_voffset_date_b}
+
+
+${lua conky_voffset_liste}
 ${color1}Global${color}
-Date${goto 150}${time %d %B %Y - %H:%M:%S}
 Nom${goto 150}${nodename}
 Kernel${goto 150}${kernel}
-Battery${goto 150}${battery_time BAT1}${goto 250}${battery_bar 10,160 BAT1}
 Uptime${goto 150}${uptime_short}
-Load average${goto 150}${loadavg 1}
-Processes${goto 150}${processes}
-Running${goto 150}${running_processes}
-
-${color1}System${color}
-cpu${goto 150}${cpu cpu0}%${goto 250}${cpubar cpu0 10,160}
-Memory${goto 150}${memperc}%${goto 250}${membar 10,160}
-Swap${goto 150}${swapperc}%${goto 250}${swapbar 10,160}
-Disk io${goto 150}${diskio}/s
-Disk /${goto 150}${fs_size /}${goto 250}${fs_bar 10,160 /}
-Disk /home${goto 150}${fs_size /home}${goto 250}${fs_bar 10,160 /home}
-
-${color1}Network${color}
-Download${goto 150}${downspeed wlp3s0}/s
-Upload${goto 150}${upspeed wlp3s0}/s
-
 ${color1}Top processes${goto 150}%cpu${goto 250}%mem${color} 
 ${top name 1}${goto 150}${top cpu 1}${goto 250}${top mem 1} 
 ${top name 2}${goto 150}${top cpu 2}${goto 250}${top mem 2} 
 ${top name 3}${goto 150}${top cpu 3}${goto 250}${top mem 3}
-# ${top name 4}${goto 150}${top cpu 4}${goto 250}${top mem 4}
-# ${top name 5}${goto 150}${top cpu 5}${goto 250}${top mem 5}
-# ${top name 6}${goto 150}${top cpu 6}${goto 250}${top mem 6}
 ]]
