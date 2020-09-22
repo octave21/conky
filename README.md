@@ -18,7 +18,7 @@ Copier conkyrc_base dans le home
 ```sh
 cp /home/papa/Documents/Scripts/conky/conkyrc_base /home/papa/.conkyrc
 ```
-Dans le fichier .conkyrc positionner la bonne interface réseau (eth0 ou wlan0)
+Dans le fichier .conkyrc positionner la bonne interface réseau (eth0 ou wlan0)    
 Executer en mode détaché
 ```sh
 conky -d
