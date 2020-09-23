@@ -8,11 +8,11 @@ conky.config = {
 	own_window_transparent = true,
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',	
 	own_window_argb_visual = true,
-	own_window_argb_value = 0,
+	own_window_argb_value = 255,
 	own_window_colour = "000000",
-	border_inner_margin = 40,
-	minimum_width = 400,
-	alignment = 'top_right',
+	border_inner_margin = 60,
+	minimum_width = 415,
+	alignment = 'middle_right',
 	gap_x = 50,
 	gap_y = 60,
 	draw_shades = false,
@@ -42,32 +42,33 @@ conky.config = {
 }
 
 conky.text = [[
-${color1}${goto 70}${voffset 90}CPU : ${color}${cpu cpu0}%${voffset -124}
+${color1}${goto 95}${voffset 105}CPU : ${color}${cpu cpu0}%${voffset -139}
 
-${color1}${goto 70}${voffset 270}Down : ${color}${downspeed wlp3s0}/s
-${color1}${goto 70}Up :   ${color}${upspeed wlp3s0}/s${voffset -321}
+${color1}${goto 95}${voffset 315}Down : ${color}${downspeed wlp3s0}/s
+${color1}${goto 95}Up :   ${color}${upspeed wlp3s0}/s${voffset -366}
 
-${color1}${goto 250}${voffset 90}Mem :  ${color}${memperc}%
-${color1}${goto 250}Swap : ${color}${swapperc}%${voffset -141}
+${color1}${goto 305}${voffset 105}Mem :  ${color}${memperc}%
+${color1}${goto 305}Swap : ${color}${swapperc}%${voffset -156}
 
-${color1}${goto 250}${voffset 270}/home : ${color}${fs_used_perc /home}%
-${color1}${goto 250}/ :     ${color}${fs_used_perc /}%
-${color1}${goto 250}I/O :   ${color}${diskio}/s${voffset -338}
+${color1}${goto 305}${voffset 315}/home : ${color}${fs_used_perc /home}%
+${color1}${goto 305}/ :     ${color}${fs_used_perc /}%
+${color1}${goto 305}I/O :   ${color}${diskio}/s${voffset -383}
 
-${color1}${goto 10}${voffset 180}Load : ${color}${loadavg 1}%${voffset -214}
+${color1}${goto 30}${voffset 210}Load : ${color}${loadavg 1}${voffset -244}
 
-${color }${goto 160}${voffset 150}${time %H:%M:%S}
-${color }${goto 160}${time %d %B %Y}
-${color }${goto 160}${battery_bar 10,160 BAT1}${voffset -218}
+${color }${goto 200}${voffset 175}${time %H:%M:%S}
+${color }${goto 200}${time %d %B %Y}
+${color1}${goto 200}${battery_bar 10,160 BAT1}${voffset -243}
 
 
-${voffset 360}
+${voffset 420}
 ${color1}Global${color}
-Nom${goto 150}${nodename}
-Kernel${goto 150}${kernel}
-Uptime${goto 150}${uptime_short}
-${color1}Top processes${goto 150}%cpu${goto 250}%mem${color} 
-${top name 1}${goto 150}${top cpu 1}${goto 250}${top mem 1} 
-${top name 2}${goto 150}${top cpu 2}${goto 250}${top mem 2} 
-${top name 3}${goto 150}${top cpu 3}${goto 250}${top mem 3}
+Nom${goto 200}${nodename}
+Kernel${goto 200}${kernel}
+Uptime${goto 200}${uptime_short}
+
+${color1}Top processes${goto 200}%cpu${goto 300}%mem${color} 
+${top name 1}${goto 190}${top cpu 1}${goto 290}${top mem 1} 
+${top name 2}${goto 190}${top cpu 2}${goto 290}${top mem 2} 
+${top name 3}${goto 190}${top cpu 3}${goto 290}${top mem 3}
 ]]

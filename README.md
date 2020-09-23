@@ -20,10 +20,10 @@ cp /home/papa/Documents/Scripts/conky/conkyrc_base /home/papa/.conkyrc
 ```
 Fichiers .conkyrc disponibles :
 * conkyrc_base est le mode standard qui n'utilise pas de script lua.
-* conkyrc_lua appelle des scripts lua qui dessinent les anneaux et calculent dynamiquement les positionnements.
+* conkyrc_lua appelle des scripts lua qui dessinent les anneaux et calculent dynamiquement les positionnements. Ce conky est à utiliser pour définir la taille et le positionnement des anneaux. Lorsque les paramètres sont définis il faut générer les valeurs avec calcul.lua et les reporter dans conky_luac.
 * conkyrc_luac appelle des scripts lua qui dessinent les anneaux.
 
-Dans le fichier .conkyrc positionner la bonne interface réseau (eth0 ou wlan0)    
+Dans le fichier .conkyrc positionner la bonne interface réseau (eth0 ou wlan0) ainsi que la bonne batterie.   
 
 # 2 - Fonctionnement
 Executer en mode détaché

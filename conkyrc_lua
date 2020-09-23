@@ -8,11 +8,11 @@ conky.config = {
 	own_window_transparent = true,
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',	
 	own_window_argb_visual = true,
-	own_window_argb_value = 0,
+	own_window_argb_value = 255,
 	own_window_colour = "000000",
-	border_inner_margin = 40,
-	minimum_width = 400,
-	alignment = 'top_right',
+	border_inner_margin = 60,
+	minimum_width = 415,
+	alignment = 'middle_right',
 	gap_x = 50,
 	gap_y = 60,
 	draw_shades = false,
@@ -54,20 +54,21 @@ ${color1}${lua conky_goto_disk}${lua conky_voffset_disk_a}/home : ${color}${fs_u
 ${color1}${lua conky_goto_disk}/ :     ${color}${fs_used_perc /}%
 ${color1}${lua conky_goto_disk}I/O :   ${color}${diskio}/s${lua conky_voffset_disk_b}
 
-${color1}${lua conky_goto_load}${lua conky_voffset_load_a}Load : ${color}${loadavg 1}%${lua conky_voffset_load_b}
+${color1}${lua conky_goto_load}${lua conky_voffset_load_a}Load : ${color}${loadavg 1}${lua conky_voffset_load_b}
 
 ${color }${lua conky_goto_date}${lua conky_voffset_date_a}${time %H:%M:%S}
 ${color }${lua conky_goto_date}${time %d %B %Y}
-${color }${lua conky_goto_date}${battery_bar 10,160 BAT1}${lua conky_voffset_date_b}
+${color1}${lua conky_goto_date}${battery_bar 10,160 BAT1}${lua conky_voffset_date_b}
 
 
 ${lua conky_voffset_liste}
 ${color1}Global${color}
-Nom${goto 150}${nodename}
-Kernel${goto 150}${kernel}
-Uptime${goto 150}${uptime_short}
-${color1}Top processes${goto 150}%cpu${goto 250}%mem${color} 
-${top name 1}${goto 150}${top cpu 1}${goto 250}${top mem 1} 
-${top name 2}${goto 150}${top cpu 2}${goto 250}${top mem 2} 
-${top name 3}${goto 150}${top cpu 3}${goto 250}${top mem 3}
+Nom${goto 200}${nodename}
+Kernel${goto 200}${kernel}
+Uptime${goto 200}${uptime_short}
+
+${color1}Top processes${goto 200}%cpu${goto 300}%mem${color} 
+${top name 1}${goto 190}${top cpu 1}${goto 290}${top mem 1} 
+${top name 2}${goto 190}${top cpu 2}${goto 290}${top mem 2} 
+${top name 3}${goto 190}${top cpu 3}${goto 290}${top mem 3}
 ]]
