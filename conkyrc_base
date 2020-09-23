@@ -40,6 +40,7 @@ conky.config = {
 conky.text = [[
 ${color1}Global${color}
 Date${goto 150}${time %d %B %Y - %H:%M:%S}
+
 Nom${goto 150}${nodename}
 Kernel${goto 150}${kernel}
 Battery${goto 150}${battery_time BAT1}${goto 250}${battery_bar 10,160 BAT1}
