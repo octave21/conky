@@ -62,6 +62,7 @@ Disk /home${goto 150}${fs_size /home}${goto 250}${fs_bar 10,160 /home}
 ${color1}Network${color}
 Download${goto 150}${downspeed wlp3s0}/s
 Upload${goto 150}${upspeed wlp3s0}/s
+Address${goto 150}${addr wlp3s0}
 
 ${color1}Top processes${goto 150}%cpu${goto 250}%mem${color} 
 ${top name 1}${goto 140}${top cpu 1}${goto 240}${top mem 1} 

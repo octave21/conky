@@ -5,8 +5,8 @@ conky.config = {
 	-- Window settings 
 	own_window = true,
 	own_window_type = 'normal',
-	own_window_transparent = true,
-	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',	
+	own_window_transparent = false,
+	own_window_hints = 'decorated,below,sticky,skip_taskbar,skip_pager',	
 	own_window_argb_visual = true,
 	own_window_argb_value = 255,
 	own_window_colour = "000000",
@@ -63,8 +63,9 @@ ${color1}${goto 200}${battery_bar 10,160 BAT1}${voffset -243}
 
 ${voffset 420}
 ${color1}Global${color}
-Nom${goto 200}${nodename}
+Name${goto 200}${nodename}
 Kernel${goto 200}${kernel}
+Address${goto 200}${addr wlp3s0}
 Uptime${goto 200}${uptime_short}
 
 ${color1}Top processes${goto 200}%cpu${goto 300}%mem${color} 
