@@ -1,11 +1,11 @@
 -- Affichage des différents cercles, calcul des positionnements des textes
 
-ring_r = 70 -- Rayon du cercle de base
+ring_r = 48 -- Rayon du cercle de base
 border_inner_margin = 60
 offset = border_inner_margin -- Offset pour les bordures x et y
 offset_load = 30 -- Majoration du rayon du cercle loadavg
 loadavg_r = offset-offset_load 
-line_hight = 10+7 -- Hauteur de ligne
+line_hight = 8+6 -- Hauteur de ligne
 color = 0xffffff -- Couleur de base
 color1 = 0xff6600 -- Couleur anneaux
 

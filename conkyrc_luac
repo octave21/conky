@@ -31,7 +31,7 @@ conky.config = {
 	-- Text settings 
 	override_utf8_locale = true,
 	use_xft = true,
-	font = 'Sans:size=10',
+	font = 'Sans:size=8',
 	uppercase = false,
 	default_color = 'FFFFFF',
 	color1 = 'FF6600',
@@ -42,30 +42,30 @@ conky.config = {
 }
 
 conky.text = [[
-${color1}${goto 95}${voffset 105}CPU : ${color}${cpu cpu0}%${voffset -139}
+${color1}${goto 84}${voffset 72}CPU : ${color}${cpu cpu0}%${voffset -100}
 
-${color1}${goto 95}${voffset 315}Down : ${color}${downspeed wlp3s0}/s
-${color1}${goto 95}Up :   ${color}${upspeed wlp3s0}/s${voffset -366}
+${color1}${goto 84}${voffset 216}Down : ${color}${downspeed wlp3s0}/s
+${color1}${goto 84}Up :   ${color}${upspeed wlp3s0}/s${voffset -258}
 
-${color1}${goto 305}${voffset 105}Mem :  ${color}${memperc}%
-${color1}${goto 305}Swap : ${color}${swapperc}%${voffset -156}
+${color1}${goto 228}${voffset 72}Mem :  ${color}${memperc}%
+${color1}${goto 228}Swap : ${color}${swapperc}%${voffset -114}
 
-${color1}${goto 305}${voffset 315}/home : ${color}${fs_used_perc /home}%
-${color1}${goto 305}/ :     ${color}${fs_used_perc /}%
-${color1}${goto 305}I/O :   ${color}${diskio}/s${voffset -383}
+${color1}${goto 228}${voffset 216}/home : ${color}${fs_used_perc /home}%
+${color1}${goto 228}/ :     ${color}${fs_used_perc /}%
+${color1}${goto 228}I/O :   ${color}${diskio}/s${voffset -272}
 
-${color1}${goto 30}${voffset 210}Load : ${color}${loadavg 1}${voffset -244}
+${color1}${goto 30}${voffset 144}Load : ${color}${loadavg 1}${voffset -172}
 
-${color }${goto 200}${voffset 175}${time %H:%M:%S}
-${color }${goto 200}${time %d %B %Y}
-${color1}${goto 200}${battery_bar 10,160 BAT1}${voffset -243}
+${color }${goto 156}${voffset 120}${time %H:%M:%S}
+${color }${goto 156}${time %d %B %Y}
+${color1}${goto 156}${battery_bar 10,160 BAT1}${voffset -176}
 
 
-${voffset 420}
+${voffset 288}
 ${color1}Global${color}
 Name${goto 200}${nodename}
 Kernel${goto 200}${kernel}
-Address${goto 200}${addr wlp3s0}
+IP${goto 200}${addr wlp3s0}
 Uptime${goto 200}${uptime_short}
 
 ${color1}Top processes${goto 200}%cpu${goto 300}%mem${color} 

@@ -31,7 +31,7 @@ conky.config = {
 	-- Text settings 
 	override_utf8_locale = true,
 	use_xft = true,
-	font = 'Sans:size=10',
+	font = 'Sans:size=8',
 	uppercase = false,
 	default_color = 'FFFFFF',
 	color1 = 'FF6600',
@@ -65,7 +65,7 @@ ${lua conky_voffset_liste}
 ${color1}Global${color}
 Name${goto 200}${nodename}
 Kernel${goto 200}${kernel}
-Address${goto 200}${addr wlp3s0}
+IP${goto 200}${addr wlp3s0}
 Uptime${goto 200}${uptime_short}
 
 ${color1}Top processes${goto 200}%cpu${goto 300}%mem${color} 
