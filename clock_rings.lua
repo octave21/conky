@@ -1,16 +1,17 @@
--- Affichage des différents cercles, calcul des positionnements des textes
-
-ring_r = 48 -- Rayon du cercle de base
+-- Scipt lua d'affichage des différents cercles
+-- Attention début de la zone générée automatiquement par genConkyrc.py. Ne pas la modifier. 
+interface = wlp3s0
+ring_r = 48
 border_inner_margin = 60
-offset = border_inner_margin -- Offset pour les bordures x et y
-offset_load = 30 -- Majoration du rayon du cercle loadavg
-loadavg_r = offset-offset_load 
-line_hight = 8+6 -- Hauteur de ligne
-color = 0xffffff -- Couleur de base
-color1 = 0xff6600 -- Couleur anneaux
+offset_load = 30
+color = 0xffffff
+color1 = 0xff6600
+-- Fin de la zone 
 
-settings_table = {
-    
+offset = border_inner_margin -- Offset pour les bordures x et y
+loadavg_r = offset-offset_load
+
+settings_table = {   
     {
         name='cpu',
         arg='cpu0',
@@ -69,7 +70,7 @@ settings_table = {
     },
     {
         name='downspeedf',
-        arg='wlp3s0',
+        arg=interface,
         max=3000, -- 3 Mbyte/s
         bg_colour=color,
         bg_alpha=0.2,
@@ -83,7 +84,7 @@ settings_table = {
     },
     {
         name='upspeedf',
-        arg='wlp3s0',
+        arg=interface,
         max=3000, -- 3 Mbyte/s
         bg_colour=color,
         bg_alpha=0.2,
@@ -141,79 +142,6 @@ settings_table = {
 
 require 'cairo'
 
--- Fonctions de positionnement des textes invoquées par .conkyrc
--- CPU
-function conky_goto_cpu()
-	return conky_parse("${goto " .. (offset+0.5*ring_r) .. "}")
-end
-function conky_voffset_cpu_a()
-	return conky_parse("${voffset " .. (1.5*ring_r) .. "}")
-end
-function conky_voffset_cpu_b()
-	return conky_parse("${voffset " .. -(1.5*ring_r+2*line_hight) .. "}")
-end
-
--- Réseau
-function conky_goto_net()
-	return conky_parse("${goto " .. (offset+0.5*ring_r) .. "}")
-end
-function conky_voffset_net_a()
-	return conky_parse("${voffset " .. (4.5*ring_r) .. "}")
-end
-function conky_voffset_net_b()
-	return conky_parse("${voffset " .. -(4.5*ring_r+3*line_hight) .. "}")
-end
-
--- Mémoire
-function conky_goto_mem()
-	return conky_parse("${goto " .. (offset+3.5*ring_r) .. "}")
-end
-function conky_voffset_mem_a()
-	return conky_parse("${voffset " .. (1.5*ring_r) .. "}")
-end
-function conky_voffset_mem_b()
-	return conky_parse("${voffset " .. -(1.5*ring_r+3*line_hight) .. "}")
-end
-
--- Disque
-function conky_goto_disk()
-	return conky_parse("${goto " .. (offset+3.5*ring_r) .. "}")
-end
-function conky_voffset_disk_a()
-	return conky_parse("${voffset " .. (4.5*ring_r) .. "}")
-end
-function conky_voffset_disk_b()
-	return conky_parse("${voffset " .. -(4.5*ring_r+4*line_hight) .. "}")
-end
-
--- Charge globale
-function conky_goto_load()
-	return conky_parse("${goto " .. (offset_load) .. "}")
-end
-function conky_voffset_load_a()
-	return conky_parse("${voffset " .. (3*ring_r) .. "}")
-end
-function conky_voffset_load_b()
-	return conky_parse("${voffset " .. -(3*ring_r+2*line_hight) .. "}")
-end
-
--- Date et batterie
-function conky_goto_date()
-	return conky_parse("${goto " .. (offset+2*ring_r) .. "}")
-end
-function conky_voffset_date_a()
-	return conky_parse("${voffset " .. (2.5*ring_r) .. "}")
-end
-function conky_voffset_date_b()
-	return conky_parse("${voffset " .. -(2.5*ring_r+4*line_hight) .. "}")
-end
-
--- Liste bas de page
-function conky_voffset_liste()
-	return conky_parse("${voffset " .. (6*ring_r) .. "}")
-end
-
--- Fonctions importée du web
 function rgb_to_r_g_b(colour,alpha)
     return ((colour / 0x10000) % 0x100) / 255., ((colour / 0x100) % 0x100) / 255., (colour % 0x100) / 255., alpha
 end
