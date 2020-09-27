@@ -1,8 +1,10 @@
 # Mise en oeuvre d'un moniteur système
 
+Ce conky fonctionne sous XFCE et i3.
 ![conky](/conky.png)
 
 # 1 - Installation ArchLinux
+
 ## 1.1 Sans script lua
 ```sh
 sudo pacman -S conky
