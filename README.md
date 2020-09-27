@@ -1,5 +1,7 @@
 # Mise en oeuvre d'un moniteur système
 
+![conky](/conky.png)
+
 # 1 - Installation
 ## 1.1 Sans script lua
 ```sh
