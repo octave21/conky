@@ -20,7 +20,7 @@ git clone https://aur.archlinux.org/conky-lua.git
 cd conky-lua
 makepkg -si
 ```
-Aller dans le répertoire conky et modifier les paramètres de configuration (répertoire, interface réseau, batterie, hauteur de ligne) dans genConkyrc.   
+Modifier dans genConkyrc.py les paramètres de configuration (racine, interface réseau, batterie, hauteur de ligne) qui correspondent à votre installation.   
 Générer les fichiers .conkyrc et clock_rings.lua
 ```sh
 python genConkyrc.py
@@ -32,3 +32,9 @@ Executer en mode détaché
 conky -d
 ```
 
+# 3 - Paramétrage
+Certains paramètres peuvent être modifiés :
+* Ne pas décorer la fenêtre : "own_window_hints" valorisé à undecorated.
+* Transparence de la fenêtre : "own_window_argb_value" valorisé entre 0 et 255.
+* Position de la fenêtre : "alignment" valorisé avec une combinaison de 
+top, middle, bottom, left, right.

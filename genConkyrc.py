@@ -7,8 +7,8 @@ import pdb, os, math
 
 # Configuration
 # Adaptation au PC
-racine1 = "/home/papa/" # User
-racine2 = racine1 + "Documents/Scripts/conky/" # Répertoire conky
+racine1 = "/home/papa" # User
+racine2 = racine1 + "/Documents/Scripts/conky" # Répertoire conky
 interface = "wlp3s0" # Interface réseau
 batterie = "BAT1" # Nom de la batterie
 # Paramètres conky
@@ -24,7 +24,7 @@ offset = border_inner_margin # Offset pour les bordures x et y
 loadavg_r = offset-offset_load 
 
 # Mise à jour du fichier lua
-f1 = open(racine2 + "clock_rings.lua","r")
+f1 = open(racine2 + "/clock_rings.lua","r")
 lignes  = f1.readlines()
 f1.close()
 lignes[2] = "interface = " + interface + "\n" 
@@ -33,7 +33,7 @@ lignes[4] = "border_inner_margin = " + str(border_inner_margin) + "\n"
 lignes[5] = "offset_load = " + str(offset_load) + "\n"  
 lignes[6] = "color = " + color + "\n"
 lignes[7] = "color1 = " + color1 + "\n"
-f1 = f1 = open(racine2 + "clock_rings.lua","w")
+f1 = f1 = open(racine2 + "/clock_rings.lua","w")
 f1.writelines(lignes)
 f1.close()
 
@@ -96,7 +96,7 @@ conky.config = {\n\
 	color1 = \'"+color1.replace("0x", "")+"\',\n\
 \n\
 	-- Lua Load\n\
-	lua_load = \'"+racine2+"clock_rings.lua\',\n\
+	lua_load = \'"+racine2+"/clock_rings.lua\',\n\
 	lua_draw_hook_pre = \'clock_rings\',\n\
 }\
 "
@@ -136,7 +136,7 @@ ${top name 3}${goto 190}${top cpu 3}${goto 290}${top mem 3}\n\
 "
 
 #Génération du fichier .conkyrc
-f1 = open(racine1 + ".conkyrc","wb")
+f1 = open(racine1 + "/.conkyrc","wb")
 f1.write((config + "\n\n" + text).encode("utf-8"))
 f1.close()
 
