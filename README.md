@@ -1,7 +1,7 @@
 # Mise en oeuvre d'un moniteur système
 
-Ce conky fonctionne sous XFCE et i3.
 ![conky](/conky.png)
+Ce conky fonctionne sous XFCE et i3.
 
 # 1 - Installation ArchLinux
 
