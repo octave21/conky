@@ -6,23 +6,25 @@
 import pdb, os, math
 
 # Configuration
-racine1 = "/home/papa/"
-racine2 = racine1 + "Documents/Scripts/conky/"
+# Adaptation au PC
+racine1 = "/home/papa/" # User
+racine2 = racine1 + "Documents/Scripts/conky/" # Répertoire conky
 interface = "wlp3s0" # Interface réseau
+batterie = "BAT1" # Nom de la batterie
+# Paramètres conky
 ring_r = 2*24 # Rayon du cercle de base
-border_inner_margin = 60
+border_inner_margin = 60 # Marge interne
 offset_load = 30 # Majoration du rayon du cercle loadavg
-font = 8 # Taille des caractres
+font = 8 # Taille des caractères
 line_hight = font+6 # Hauteur de ligne
 minimum_width = 300 # Taille de la fenêtre
 color = "0xffffff" # Couleur du texte 
 color1 = "0xff6600" # Couleur des anneaux
-batterie = "BAT1"
 offset = border_inner_margin # Offset pour les bordures x et y
 loadavg_r = offset-offset_load 
 
 # Mise à jour du fichier lua
-f1 = f1 = open(racine2 + "clock_rings.lua","r")
+f1 = open(racine2 + "clock_rings.lua","r")
 lignes  = f1.readlines()
 f1.close()
 lignes[2] = "interface = " + interface + "\n" 
