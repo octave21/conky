@@ -20,7 +20,7 @@ git clone https://aur.archlinux.org/conky-lua.git
 cd conky-lua
 makepkg -si
 ```
-Aller dans le répertoire conky et modifier les paramètres de configuration (répertoire, interface réseau, batterie) dans genConkyrc.   
+Aller dans le répertoire conky et modifier les paramètres de configuration (répertoire, interface réseau, batterie, hauteur de ligne) dans genConkyrc.   
 Générer les fichiers .conkyrc et clock_rings.lua
 ```sh
 python genConkyrc.py
