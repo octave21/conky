@@ -2,7 +2,7 @@
 
 ![conky](/conky.png)
 
-# 1 - Installation
+# 1 - Installation ArchLinux
 ## 1.1 Sans script lua
 ```sh
 sudo pacman -S conky
