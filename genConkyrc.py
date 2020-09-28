@@ -27,7 +27,7 @@ loadavg_r = offset-offset_load
 f1 = open(racine2 + "/clock_rings.lua","r")
 lignes  = f1.readlines()
 f1.close()
-lignes[2] = "interface = " + interface + "\n" 
+lignes[2] = "interface = \"" + str(interface) + "\"\n" 
 lignes[3] = "ring_r = " + str(ring_r) + "\n" 
 lignes[4] = "border_inner_margin = " + str(border_inner_margin) + "\n"
 lignes[5] = "offset_load = " + str(offset_load) + "\n"  

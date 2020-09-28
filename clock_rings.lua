@@ -1,6 +1,6 @@
 -- Scipt lua d'affichage des différents cercles
 -- Attention début de la zone générée automatiquement par genConkyrc.py. Ne pas la modifier. 
-interface = wlp3s0
+interface = "wlp3s0"
 ring_r = 48
 border_inner_margin = 60
 offset_load = 30
